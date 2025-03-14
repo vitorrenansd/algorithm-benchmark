@@ -1,5 +1,7 @@
-.gradle
-.idea
-.bin
+/.gradle
+/bin
+/.idea
+
 .vscode
+
 .env
