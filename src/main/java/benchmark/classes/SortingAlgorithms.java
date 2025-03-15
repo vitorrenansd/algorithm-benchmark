@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class SortingAlgorithms {
     
 
-    public SortingAlgorithms() {
+    protected SortingAlgorithms() {
     }
 
-    public void bubbleSort(int[] array) {
+    protected void bubbleSort(int[] array) {
         // Create a copy of the original array to avoid modifying the input
         int[] arr = Arrays.copyOf(array, array.length);
 
