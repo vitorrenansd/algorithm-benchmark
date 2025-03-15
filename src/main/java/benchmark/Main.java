@@ -1,13 +1,20 @@
 package benchmark;
 
-import benchmark.classes.SortingAlgorithms;
+import java.util.Random;
+
+import benchmark.classes.TimeStamp;
 
 public class Main {
     public static void main(String[] args) {
-        SortingAlgorithms so = new SortingAlgorithms();
+        TimeStamp ts = new TimeStamp();
 
-        int[] values = {8, 9, 2, 1, 8, 17, 0, 5, 11};
-
-        so.bubbleSort(values);
+        // Gera 1500 valores entre -10000 e 10000
+        int[] values = new int[1500];
+        Random rand = new Random();
+        for (int i = 0; i < values.length; i++) {
+            values[i] = rand.nextInt(20001) - 10000; 
+        }
+        
+        ts.benchBubbleSorting(values);
     }
 }
