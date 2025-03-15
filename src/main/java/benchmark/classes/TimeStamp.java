@@ -1,6 +1,9 @@
 package benchmark.classes;
 
-import benchmark.algorithms.*;
+import java.util.Arrays;
+
+public class TimeStamp extends SortingAlgorithms {
+
 
 public class TimeStamp {
     public TimeStamp() {
@@ -24,6 +27,18 @@ public class TimeStamp {
     }
 
     public void benchMergeSorting(int[] values) {
+        SortingAlgorithms so  = new SortingAlgorithms();
+
+        long startTime = System.nanoTime();
+
+        so.mergeSort(values);
+
+        long endTime = System.nanoTime();
+
+        long executionTime = (endTime - startTime);
+
+        System.out.println("Sorted array: " + Arrays.toString(values));
+        System.out.println("Execution time for MergeSort: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
 
     }
 
