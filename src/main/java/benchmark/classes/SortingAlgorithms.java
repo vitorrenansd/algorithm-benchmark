@@ -1,6 +1,6 @@
 package benchmark.classes;
 
-public class Algorithms {
+public class SortingAlgorithms {
     
 
     public void mergeSort() {
