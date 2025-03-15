@@ -1,18 +1,18 @@
 package benchmark.classes;
 
-public class TimeStamp extends SortingAlgorithms {
+import benchmark.algorithms.*;
 
-
+public class TimeStamp {
     public TimeStamp() {
     }
 
     public void benchBubbleSorting(int[] values) {
-        SortingAlgorithms so = new SortingAlgorithms();
+        BubbleSort bs = new BubbleSort();
 
         // Start measuring
         long startTime = System.nanoTime();
 
-        so.bubbleSort(values);
+        bs.bubbleSort(values);
 
         // Stop measuring
         long endTime = System.nanoTime();
