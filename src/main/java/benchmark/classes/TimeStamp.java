@@ -4,7 +4,7 @@ import java.util.Arrays;
 import benchmark.algorithms.*;;
 
 
-public class TimeStamp extends SortingAlgorithms {
+public class TimeStamp {
 
     public TimeStamp() {
     }
