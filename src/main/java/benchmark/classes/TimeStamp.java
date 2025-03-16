@@ -28,7 +28,7 @@ public class TimeStamp {
 
     public void benchMergeSorting(int[] values) {
         
-        MergeSort ms  = new MergeSort();
+        MergeSort ms = new MergeSort();
 
         long startTime = System.nanoTime();
 
