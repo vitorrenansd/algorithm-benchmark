@@ -15,6 +15,6 @@ public class Main {
             values[i] = rand.nextInt(20001) - 10000; 
         }
         
-        ts.benchBubbleSorting(values);
+        ts.benchMergeSorting(values);
     }
 }
