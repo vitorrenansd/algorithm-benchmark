@@ -1,14 +1,8 @@
 package benchmark.classes;
 
-import java.util.Arrays;
-import benchmark.algorithms.*;;
-
+import benchmark.algorithms.*;
 
 public class TimeStamp {
-
-    public TimeStamp() {
-    }
-
     public void benchBubbleSorting(int[] values) {
         BubbleSort bs = new BubbleSort();
 
@@ -39,10 +33,5 @@ public class TimeStamp {
         long executionTime = (endTime - startTime);
 
         System.out.println("Execution time for MergeSort: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
-
-    }
-
-    public void benchQuickSorting(int[] values) {
-
     }
 }
