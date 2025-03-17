@@ -6,7 +6,7 @@ public class BubbleSort {
     public BubbleSort() {
     }
 
-    public void bubbleSort(int[] array) {
+    public int[] bubbleSort(int[] array) {
         // Create a copy of the original array to avoid modifying the input
         int[] arr = Arrays.copyOf(array, array.length);
 
@@ -24,6 +24,6 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println(Arrays.toString(arr));
+        return arr;
     }
 }
