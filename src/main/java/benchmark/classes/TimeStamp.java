@@ -38,7 +38,6 @@ public class TimeStamp {
 
         long executionTime = (endTime - startTime);
 
-        System.out.println("Sorted array: " + Arrays.toString(values));
         System.out.println("Execution time for MergeSort: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
 
     }
