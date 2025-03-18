@@ -40,7 +40,21 @@ public class TimeStamp {
 
     }
 
-    public void benchQuickSorting(int[] values) {
+    public void benchHeapSorting(int[] values) {
+        
+        HeapSort hp = new HeapSort();
+
+        long startTime = System.nanoTime();
+
+        hp.heapSort(values);
+
+        long endTime = System.nanoTime();
+
+        long executionTime = (endTime - startTime);
+
+        System.out.println("Execution time for HeapSort: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
 
     }
+
+
 }
