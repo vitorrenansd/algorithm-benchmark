@@ -34,4 +34,19 @@ public class TimeStamp {
 
         System.out.println("Execution time for MergeSort: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
     }
+
+    public void benchHeapSorting(int[] values) {
+        
+        HeapSort hp = new HeapSort();
+
+        long startTime = System.nanoTime();
+
+        hp.heapSort(values);
+
+        long endTime = System.nanoTime();
+
+        long executionTime = (endTime - startTime);
+
+        System.out.println("Execution time for HeapSort: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
+    }
 }
