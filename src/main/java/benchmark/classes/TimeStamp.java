@@ -1,8 +1,6 @@
 package benchmark.classes;
 
-import java.util.Arrays;
 import benchmark.algorithms.*;;
-
 
 public class TimeStamp {
 
@@ -42,7 +40,4 @@ public class TimeStamp {
 
     }
 
-    public void benchQuickSorting(int[] values) {
-
-    }
 }
