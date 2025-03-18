@@ -3,9 +3,6 @@ package benchmark.algorithms;
 import java.util.Arrays;
 
 public class BubbleSort {
-    public BubbleSort() {
-    }
-
     public int[] bubbleSort(int[] array) {
         // Create a copy of the original array to avoid modifying the input
         int[] arr = Arrays.copyOf(array, array.length);
