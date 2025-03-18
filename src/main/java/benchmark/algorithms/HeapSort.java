@@ -3,7 +3,7 @@ package benchmark.algorithms;
 import java.util.Arrays;
 
 public class HeapSort {
-    public int[] sort(int[] array) {
+    public int[] heapSort(int[] array) {
         // Create a copy of the original array to avoid modifying it
         int[] arr = Arrays.copyOf(array, array.length);
         int n = arr.length;
