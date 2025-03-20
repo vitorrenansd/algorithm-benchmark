@@ -1,6 +1,8 @@
 package benchmark;
 
 import java.util.Random;
+import benchmark.classes.TimeStamp;
+import benchmark.algorithms.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,5 +14,10 @@ public class Main {
             values[i] = rand.nextInt(20001) - 10000; 
         }
 
+        TimeStamp ts = new TimeStamp(1);
+
+        ts.benchSorting(values, new MergeSort(), "MergeSort");
+        ts.benchSorting(values, new HeapSort(), "HeapSort");
+        ts.benchSorting(values, new BubbleSort(), "BubbleSort");
     }
 }
