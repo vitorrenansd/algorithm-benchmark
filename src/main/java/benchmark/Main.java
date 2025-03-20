@@ -14,7 +14,7 @@ public class Main {
             values[i] = rand.nextInt(20001) - 10000; 
         }
 
-        TimeStamp ts = new TimeStamp(1);
+        TimeStamp ts = new TimeStamp(250);
 
         ts.benchSorting(values, new MergeSort(), "MergeSort");
         ts.benchSorting(values, new HeapSort(), "HeapSort");
