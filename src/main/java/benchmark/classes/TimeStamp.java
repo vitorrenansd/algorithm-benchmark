@@ -17,7 +17,6 @@ public class TimeStamp {
         long endTime = System.nanoTime();
 
         long executionTime = (endTime - startTime);
-
         System.out.println("Execution time for " + algorithmName + ": " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
     }
 }
