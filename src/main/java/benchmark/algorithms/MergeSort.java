@@ -1,12 +1,23 @@
 package benchmark.algorithms;
 
-public class MergeSort {
-    public void mergeSort(int[] array) {
+import java.util.Arrays;
+import benchmark.interfaces.*;
+
+public class MergeSort implements SortingAlgorithm {
+
+    @Override
+    public int[] sort(int[] array) {
+        // If the array is null or has only one element, it is already sorted.
         if (array == null || array.length <= 1) {
-            return; // If the array is null or has only one element, it is already sorted.
+            return array == null ? null : Arrays.copyOf(array, array.length);
         }
-        mergeSort(array, 0, array.length - 1);
+        // Create a copy of the original array to avoid modifying the input
+        int[] arr= Arrays.copyOf(array, array.length);
+        
+        mergeSort(arr, 0, arr.length - 1);
+        return arr; // Return the sorted array
     }
+
     private void mergeSort(int[] array, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2; // Finds the middle of array.

@@ -1,9 +1,12 @@
 package benchmark.algorithms;
 
 import java.util.Arrays;
+import benchmark.interfaces.*;
 
-public class BubbleSort {
-    public int[] bubbleSort(int[] array) {
+public class BubbleSort implements SortingAlgorithm{
+
+    @Override
+    public int[] sort(int[] array) {
         // Create a copy of the original array to avoid modifying the input
         int[] arr = Arrays.copyOf(array, array.length);
 
