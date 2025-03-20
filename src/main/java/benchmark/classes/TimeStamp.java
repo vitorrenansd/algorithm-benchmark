@@ -18,6 +18,6 @@ public class TimeStamp {
         long endTime = System.nanoTime();
 
         double executionTime = (endTime - startTime);
-        System.out.println(algorithmName + " iterating " + this.testsQuantity + "x: TOTAL " + (executionTime / 1000000) + "ms" + " | AVG " + "PLACEHOLDER ms.");
+        System.out.println(algorithmName + " iterating " + this.testsQuantity + "x: TOTAL " + (executionTime / 1000000) + "ms" + " | AVG " + (executionTime / this.testsQuantity / 1000000) + "ms.");
     }
 }
