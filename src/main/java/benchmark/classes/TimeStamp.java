@@ -1,5 +1,7 @@
 package benchmark.classes;
 
+import benchmark.interfaces.*;
+
 public class TimeStamp {
     public int testsQuantity;
 
@@ -9,21 +11,13 @@ public class TimeStamp {
     }
 
     // Benchmark, iterate N times and print the avg time
-    public void benchSorting(int[] values) {
-
-        for (int i = 0; i < testsQuantity; i++) {
-
-        }
-        // Start measuring
+    public void benchSorting(int[] values, SortingAlgorithm algorithm, String algorithmName) {
         long startTime = System.nanoTime();
-
-
-
-        // Stop measuring
+        algorithm.sort(values);
         long endTime = System.nanoTime();
 
         long executionTime = (endTime - startTime);
-        System.out.println("Execution time for: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
-    }
 
+        System.out.println("Execution time for " + algorithmName + ": " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
+    }
 }
