@@ -1,9 +1,12 @@
 package benchmark.algorithms;
 
 import java.util.Arrays;
+import benchmark.interfaces.*;
 
-public class HeapSort {
-    public int[] heapSort(int[] array) {
+public class HeapSort implements SortingAlgorithm {
+
+    @Override
+    public int[] sort(int[] array) {
         // Create a copy of the original array to avoid modifying it
         int[] arr = Arrays.copyOf(array, array.length);
         int n = arr.length;

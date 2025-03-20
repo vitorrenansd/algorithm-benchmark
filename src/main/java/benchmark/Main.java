@@ -1,12 +1,11 @@
 package benchmark;
 
 import java.util.Random;
-
 import benchmark.classes.TimeStamp;
+import benchmark.algorithms.*;
 
 public class Main {
     public static void main(String[] args) {
-        TimeStamp ts = new TimeStamp();
 
         // Gera 1500 valores entre -10000 e 10000
         int[] values = new int[1500];
@@ -14,9 +13,11 @@ public class Main {
         for (int i = 0; i < values.length; i++) {
             values[i] = rand.nextInt(20001) - 10000; 
         }
-        
-        ts.benchMergeSorting(values);
-        ts.benchBubbleSorting(values);
-        ts.benchHeapSorting(values);
+
+        TimeStamp ts = new TimeStamp(1);
+
+        ts.benchSorting(values, new MergeSort(), "MergeSort");
+        ts.benchSorting(values, new HeapSort(), "HeapSort");
+        ts.benchSorting(values, new BubbleSort(), "BubbleSort");
     }
 }
