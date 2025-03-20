@@ -7,16 +7,18 @@ public class TimeStamp {
 
     // Constructor method
     public TimeStamp(int testsQuantity) {
-        testsQuantity = this.testsQuantity;
+        this.testsQuantity = testsQuantity;
     }
 
     // Benchmark, iterate N times and print the avg time
     public void benchSorting(int[] values, SortingAlgorithm algorithm, String algorithmName) {
         long startTime = System.nanoTime();
-        algorithm.sort(values);
+        for (int i = 0; i < this.testsQuantity; i++) {
+            algorithm.sort(values);
+        }
         long endTime = System.nanoTime();
 
-        long executionTime = (endTime - startTime);
-        System.out.println("Execution time for " + algorithmName + ": " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
+        long executionTime = (endTime - startTime) / this.testsQuantity;
+        System.out.println(algorithmName + " iterates " + this.testsQuantity + "x: " + executionTime + "ns. " + (executionTime / 1000000) + "ms.");
     }
 }
