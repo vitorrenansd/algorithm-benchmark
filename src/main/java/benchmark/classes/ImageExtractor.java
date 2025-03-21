@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 public class ImageExtractor {
 
     public void extractData(String imageName) {
-        File image = new File ("src/main/java/benchmark/images/" + imageName);
+        File image = new File ("images/" + imageName);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         if (image.exists() && image.isFile()) {
