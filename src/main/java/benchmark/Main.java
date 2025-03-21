@@ -1,24 +1,11 @@
 package benchmark;
 
-import java.util.Random;
-import benchmark.classes.TimeStamp;
-import benchmark.algorithms.*;
+import benchmark.classes.*;
 
 public class Main {
     public static void main(String[] args) {
+        ImageExtractor ie = new ImageExtractor();
 
-        // Gera 4000 valores entre -10000 e 10000
-        int[] values = new int[4000];
-        Random rand = new Random();
-        for (int i = 0; i < values.length; i++) {
-            values[i] = rand.nextInt(20001) - 10000; 
-        }
-
-        TimeStamp ts = new TimeStamp(250);
-
-        ts.benchSorting(values, new MergeSort(), "MergeSort");
-        ts.benchSorting(values, new HeapSort(), "HeapSort");
-        // muito lerdo tomar no cu ts.benchSorting(values, new BubbleSort(), "BubbleSort");
-
+        ie.extractData("IMG_20250302_170436.jpg");
     }
 }
