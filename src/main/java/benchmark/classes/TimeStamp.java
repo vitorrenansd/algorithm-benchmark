@@ -17,7 +17,9 @@ public class TimeStamp {
         for (int i = 0; i < this.testsQuantity; i++) { algorithm.sort(values); }
         long endTime = System.nanoTime();
 
-        double executionTime = (endTime - startTime);
-        System.out.println(algorithmName + " iterating " + this.testsQuantity + "x: TOTAL " + (executionTime / 1000000) + "ms" + " | AVG " + (executionTime / this.testsQuantity / 1000000) + "ms.");
+        float executionTime = (endTime - startTime);
+        float avgExecutionTime = executionTime / this.testsQuantity;
+
+        System.out.println(algorithmName + " iterating " + this.testsQuantity + "x: TOTAL " + executionTime / 1000000 + "ms" + " | AVG " + avgExecutionTime / 1000000 + "ms");
     }
 }
