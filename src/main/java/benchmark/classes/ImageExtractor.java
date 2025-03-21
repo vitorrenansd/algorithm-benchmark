@@ -7,6 +7,8 @@ public class ImageExtractor {
 
     public void extractData(String imageName) {
         File image = new File ("images/" + imageName);
+
+        // Format to Brazil default date-time
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         if (image.exists() && image.isFile()) {
