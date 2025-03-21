@@ -18,6 +18,7 @@ public class Main {
 
         ts.benchSorting(values, new MergeSort(), "MergeSort");
         ts.benchSorting(values, new HeapSort(), "HeapSort");
-        ts.benchSorting(values, new BubbleSort(), "BubbleSort");
+        // muito lerdo tomar no cu ts.benchSorting(values, new BubbleSort(), "BubbleSort");
+
     }
 }
