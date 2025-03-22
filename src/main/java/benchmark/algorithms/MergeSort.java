@@ -3,76 +3,73 @@ package benchmark.algorithms;
 import java.util.Arrays;
 import benchmark.interfaces.*;
 
+import java.io.*;
+import java.util.*;
+//the class that mergesort the array
 public class MergeSort implements SortingAlgorithm {
-
     @Override
     public int[] sort(int[] array) {
-        // If the array is null or has only one element, it is already sorted.
         if (array == null || array.length <= 1) {
             return array == null ? null : Arrays.copyOf(array, array.length);
         }
-        // Create a copy of the original array to avoid modifying the input
-        int[] arr= Arrays.copyOf(array, array.length);
-        
+        int[] arr = Arrays.copyOf(array, array.length);
         mergeSort(arr, 0, arr.length - 1);
-        return arr; // Return the sorted array
+        return arr;
     }
-
+//the method to split the array into two parts and merge them
     private void mergeSort(int[] array, int left, int right) {
         if (left < right) {
-            int mid = left + (right - left) / 2; // Finds the middle of array.
-
-            // Ordens the first part.
+            int mid = left + (right - left) / 2;
             mergeSort(array, left, mid);
-            // Ordens the second one.
             mergeSort(array, mid + 1, right);
-            // Merge both.
             merge(array, left, mid, right);
         }
     }
-
-    // The method to merge.
+//the method to merge the two parts of the array
     private void merge(int[] array, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
-        int[] leftArray = new int[n1];
+        int[] leftArray = new int[n1];//create two arrays to store the two parts
         int[] rightArray = new int[n2];
 
-        // Copy the elements to temporary arrays.
-        for (int i = 0; i < n1; i++) {
-            leftArray[i] = array[left + i];
-        }
-        for (int j = 0; j < n2; j++) {
-            rightArray[j] = array[mid + 1 + j];
-        }
-
+        System.arraycopy(array, left, leftArray, 0, n1);//copy the data to the two arrays
+        System.arraycopy(array, mid + 1, rightArray, 0, n2);
+        //merge the two arrays
         int i = 0, j = 0, k = left;
-
-        // Merge the sorted arrays (Absolute Cinema moment)
         while (i < n1 && j < n2) {
             if (leftArray[i] <= rightArray[j]) {
-                array[k] = leftArray[i];
-                i++;
+                array[k++] = leftArray[i++];
             } else {
-                array[k] = rightArray[j];
-                j++;
+                array[k++] = rightArray[j++];
             }
-            k++;
         }
 
-        // Copy the remaining elements from leftArray, if it have one.
         while (i < n1) {
-            array[k] = leftArray[i];
-            i++;
-            k++;
+            array[k++] = leftArray[i++];
         }
-
-        // Copy the remaining elements from rightArray, if it have one. 
         while (j < n2) {
-            array[k] = rightArray[j];
-            j++;
-            k++;
+            array[k++] = rightArray[j++];
         }
-    }   
+    }
+//the method to sort the file implementing java.io
+    public void sortFile(String inputFile, String outputFile) throws IOException {
+        List<Integer> dataList = new ArrayList<>();
+        //read the file and store the data in the list
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))){
+            String line;
+            while ((line = reader.readLine()) != null) {
+                dataList.add(Integer.parseInt(line.trim()));
+            }
+        }
+        //convert the list to array
+        int[] array = dataList.stream().mapToInt(i -> i).toArray();
+        int[] sortedArray = sort(array);
+        //write the sorted array to the output file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            for (int num : sortedArray) {
+                writer.write(num + "\n");
+            }
+        }
+    }
 }
