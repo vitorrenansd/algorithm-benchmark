@@ -6,4 +6,4 @@
 
 # Outros
 
-- [ ] Desenho das classes
+- [x] Desenho das classes
