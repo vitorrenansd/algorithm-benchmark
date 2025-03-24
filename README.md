@@ -1,10 +1,7 @@
 # Lista de tarefas
 
-- [ ] Converter metodo MergeSort int[] para String[]
-- [ ] Converter metodo BubbleSort int[] para String[]
-- [ ] Converter metodo HeapSort int[] para String[]
+- [ ] Métodos para extrair dados de data e tamanho de todas as imagens da pasta.
 
 # Outros
 
 - [x] Desenho das classes
-- [ ] 
