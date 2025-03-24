@@ -14,7 +14,9 @@ public class TimeStamp {
     public void benchSorting(int[] values, SortingAlgorithm algorithm, String algorithmName) {
 
         long startTime = System.nanoTime();
-        for (int i = 0; i < this.testsQuantity; i++) { algorithm.sort(values); }
+        for (int i = 0; i < this.testsQuantity; i++) {
+            algorithm.sort(values);
+        }
         long endTime = System.nanoTime();
 
         float executionTime = (endTime - startTime);
