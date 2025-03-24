@@ -1,5 +1,9 @@
-# algorithm-benchmark
- 
-Project made for my SPA (Supervisioned Practical Activity, a semester project from my college, translated from "APS - Atividade Prática Supervisionada")
+# Lista de tarefas
 
-In this project we will benchmark a few sorting algorithms using images metadata
+- [] Converter metodo MergeSort int[] para String[]
+- [] Converter metodo BubbleSort int[] para String[]
+- [] Converter metodo HeapSort int[] para String[]
+
+# Outros
+
+- [] Desenho das classes
