@@ -1,9 +1,9 @@
 # Lista de tarefas
 
-- [] Converter metodo MergeSort int[] para String[]
-- [] Converter metodo BubbleSort int[] para String[]
-- [] Converter metodo HeapSort int[] para String[]
+- [ ] Converter metodo MergeSort int[] para String[]
+- [ ] Converter metodo BubbleSort int[] para String[]
+- [ ] Converter metodo HeapSort int[] para String[]
 
 # Outros
 
-- [] Desenho das classes
+- [ ] Desenho das classes
