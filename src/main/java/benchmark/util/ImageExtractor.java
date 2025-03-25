@@ -39,7 +39,7 @@ public class ImageExtractor {
         }
     
         // Method to get the file sizes in bytes
-        public void getFileSizes(String directoryName) {
+        public void getFileSize(String directoryName) {
             File directory = new File(directoryName);
     
             // Check if the directory exists and is valid
