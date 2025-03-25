@@ -6,6 +6,6 @@ public class Main {
     public static void main(String[] args) {
         ImageExtractor ie = new ImageExtractor();
 
-        ie.extractData("IMG_20250302_170436.jpg");
+        ie.getFileSizes("images");
     }
 }
