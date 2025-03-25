@@ -1,6 +1,4 @@
-package benchmark.classes;
-
-import benchmark.interfaces.*;
+package benchmark.util;
 
 public class TimeStamp {
     public int testsQuantity;
