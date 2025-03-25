@@ -6,3 +6,4 @@
 # Outros
 
 - [x] Desenho das classes
+- [ ] Aplicar @Tests (end-game)
