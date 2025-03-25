@@ -1,7 +1,8 @@
 package benchmark.algorithms;
 
 import java.util.Arrays;
-import benchmark.interfaces.*;
+
+import benchmark.util.SortingAlgorithm;
 
 public class HeapSort implements SortingAlgorithm {
 

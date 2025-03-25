@@ -1,4 +1,4 @@
-package benchmark.classes;
+package benchmark.util;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
