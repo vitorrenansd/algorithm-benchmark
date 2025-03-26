@@ -2,6 +2,12 @@ package benchmark.util;
 
 import javax.swing.JFrame;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+
 public class ResultChart extends JFrame{
 
     public ResultChart() {
@@ -9,6 +15,22 @@ public class ResultChart extends JFrame{
         setTitle("benchmark-algorithm");
         setSize(800, 600); // 800x600 resolution
         setLocationRelativeTo(null);
+
+        createBarGraph(489,58,899);
+
         setVisible(true);
+    }
+
+    public void createBarGraph(int mergeTime, int heapTime, int bubbleTime) {
+
+            DefaultCategoryDataset bar = new DefaultCategoryDataset();
+            bar.setValue(mergeTime, "MergeSort", "");
+            bar.setValue(heapTime, "HeapSort", "");
+            bar.setValue(bubbleTime, "BubbleSort", "");
+
+            // Graph config
+            JFreeChart graph = ChartFactory.createBarChart("Tempo necessário (ms)", "", "ms", bar, PlotOrientation.VERTICAL, true, true, false);
+            ChartPanel panel = new ChartPanel(graph);
+            add(panel);
     }
 }
