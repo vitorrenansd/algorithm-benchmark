@@ -1,5 +1,7 @@
 package benchmark.util;
 
+import java.util.List;
+
 public class TimeStamp {
     public int testsQuantity;
 
@@ -9,7 +11,7 @@ public class TimeStamp {
     }
 
     // Benchmark, iterate N times and print the avg time
-    public void benchSorting(int[] values, SortingAlgorithm algorithm, String algorithmName) {
+    public void benchSorting(List<Long> values, SortingAlgorithm algorithm, String algorithmName) {
 
         long startTime = System.nanoTime();
         for (int i = 0; i < this.testsQuantity; i++) {
