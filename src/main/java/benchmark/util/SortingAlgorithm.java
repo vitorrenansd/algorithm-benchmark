@@ -1,5 +1,7 @@
 package benchmark.util;
 
+import java.util.List;
+
 public interface SortingAlgorithm {
-    int[] sort(int[] values); // Default method for all algorithms
+    List<Long> sort(List<Long> values); // Default method for all algorithms
 }
