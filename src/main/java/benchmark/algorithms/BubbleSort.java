@@ -1,8 +1,10 @@
 package benchmark.algorithms;
 
 import java.util.List;
+
+import benchmark.SortingAlgorithm;
+
 import java.util.ArrayList;
-import benchmark.util.SortingAlgorithm;
 
 public class BubbleSort implements SortingAlgorithm {
     @Override

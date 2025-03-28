@@ -2,7 +2,8 @@ package benchmark.algorithms;
 
 import java.util.ArrayList;
 import java.util.List;
-import benchmark.util.SortingAlgorithm;
+
+import benchmark.SortingAlgorithm;
 
 public class HeapSort implements SortingAlgorithm {
     @Override
