@@ -7,5 +7,6 @@
 /.idea
 .vscode
 
+## Local files
 .env
 /images
