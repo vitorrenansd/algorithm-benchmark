@@ -1,2 +1,2 @@
-rootProject.name = "benchmark-algoritmos"
+rootProject.name = "algorithm-benchmark"
 
