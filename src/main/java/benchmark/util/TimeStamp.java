@@ -1,25 +1,31 @@
 package benchmark.util;
 
-public class TimeStamp {
-    public int testsQuantity;
+import java.util.List;
 
-    // Constructor method
-    public TimeStamp(int testsQuantity) {
-        this.testsQuantity = testsQuantity;
+public class TimeStamp {
+    public Integer quantity;
+
+    
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+    public Integer getQuantity() {
+        return this.quantity;
     }
 
     // Benchmark, iterate N times and print the avg time
-    public void benchSorting(int[] values, SortingAlgorithm algorithm, String algorithmName) {
+    // TRANSFORMAR DPS EM UM METODO DE RETURN, PLACEHOLDER
+    public void benchSorting(List<Long> values, SortingAlgorithm algorithm) {
 
-        long startTime = System.nanoTime();
-        for (int i = 0; i < this.testsQuantity; i++) {
+        Long startTime = System.nanoTime();
+        for (int i = 0; i < this.getQuantity(); i++) {
             algorithm.sort(values);
         }
-        long endTime = System.nanoTime();
+        Long endTime = System.nanoTime();
 
         float executionTime = (endTime - startTime);
-        float avgExecutionTime = executionTime / this.testsQuantity;
+        // float avgExecutionTime = executionTime / this.getQuantity();
 
-        System.out.println(algorithmName + " iterating " + this.testsQuantity + "x: TOTAL " + executionTime / 1000000 + "ms" + " | AVG " + avgExecutionTime / 1000000 + "ms");
+        System.out.println(this.getQuantity() + "x: TOTAL " + executionTime + "ns");
     }
 }
