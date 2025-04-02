@@ -1,15 +1,13 @@
 package benchmark.algorithms;
 
 import java.util.List;
-
-import benchmark.SortingAlgorithm;
-
 import java.util.ArrayList;
+import benchmark.SortingAlgorithm;
 
 public class BubbleSort implements SortingAlgorithm {
     @Override
     public List<Long> sort(List<Long> array) {
-        // Create a copy of the original array to avoid modifying the input
+        // Create a copy of the original array
         List<Long> arr = new ArrayList<>(array);
         
         // Iterate through the array (n - 1) times

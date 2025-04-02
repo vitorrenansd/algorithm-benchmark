@@ -9,16 +9,11 @@ public class MergeSort implements SortingAlgorithm {
 
     @Override
     public List<Long> sort(List<Long> array) {
-        // If the array is null or has only one element, it is already sorted.
-        if (array == null || array.size() <= 1) {
-            return array == null ? null : new ArrayList<>(array); // Make a copy of the list to avoid modification
-        }
-
-        // Create a copy of the original array to avoid modifying the input
+        // Create a copy of the original array
         List<Long> arr = new ArrayList<>(array);
         
         mergeSort(arr, 0, arr.size() - 1);
-        return arr; // Return the sorted array
+        return arr;
     }
 
     private void mergeSort(List<Long> array, int left, int right) {

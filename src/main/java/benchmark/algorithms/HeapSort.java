@@ -1,14 +1,13 @@
 package benchmark.algorithms;
 
-import java.util.ArrayList;
 import java.util.List;
-
+import java.util.ArrayList;
 import benchmark.SortingAlgorithm;
 
 public class HeapSort implements SortingAlgorithm {
     @Override
     public List<Long> sort(List<Long> array) {
-        // Create a copy of the original array to avoid modifying it
+        // Create a copy of the original array
         List<Long> arr = new ArrayList<>(array);
         int n = arr.size();
 
