@@ -14,18 +14,19 @@ public class TimeStamp {
     }
 
     // Benchmark, iterate N times and print the avg time
-    // TRANSFORMAR DPS EM UM METODO DE RETURN, PLACEHOLDER
-    public void benchSorting(List<Long> values, SortingAlgorithm algorithm) {
+    public Long benchSorting(List<Long> values, SortingAlgorithm algorithm) {
 
+        // Start benchmark
         Long startTime = System.nanoTime();
         for (int i = 0; i < this.getQuantity(); i++) {
             algorithm.sort(values);
         }
+        // Stop benchmark
         Long endTime = System.nanoTime();
 
-        float executionTime = (endTime - startTime);
-        // float avgExecutionTime = executionTime / this.getQuantity();
+        // Do the math
+        Long executionTime = (endTime - startTime);
 
-        System.out.println(this.getQuantity() + "x: TOTAL " + executionTime + "ns");
+        return executionTime;
     }
 }
