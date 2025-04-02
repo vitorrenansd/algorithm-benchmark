@@ -1,9 +1,12 @@
+## Gradle unnecessary
 /.gradle
 /build
 /bin
-/.idea
 
+## IDE
+/.idea
 .vscode
 
+## Local files
 .env
 /images
