@@ -2,7 +2,7 @@ package benchmark.algorithms;
 
 import java.util.Arrays;
 
-import benchmark.util.SortingAlgorithm;
+import benchmark.SortingAlgorithm;
 
 public class BubbleSort implements SortingAlgorithm{
 

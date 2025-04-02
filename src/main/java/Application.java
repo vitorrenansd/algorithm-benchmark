@@ -1,8 +1,6 @@
-package benchmark;
+import benchmark.ResultChart;
 
-import benchmark.util.*;
-
-public class Main {
+public class Application {
     public static void main(String[] args) {
 
         new ResultChart();
