@@ -29,7 +29,7 @@ public class ImageExtractor {
         return lastModifiedList;
     }
     
-    // Method to get the file sizes in bytes
+    // Method to get the size in bytes of files
     public List<Long> pullAllSize(String directoryName) {
         File directory = new File(directoryName);
     

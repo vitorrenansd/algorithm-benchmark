@@ -21,9 +21,10 @@ public class ResultChart extends JFrame{
         setVisible(true);
     }
 
-    public void createBarGraph(int mergeTime, int heapTime, int bubbleTime) {
-
+    public void createBarGraph(Integer mergeTime, Integer heapTime, Integer bubbleTime) {
             DefaultCategoryDataset bar = new DefaultCategoryDataset();
+
+            // Creating bars
             bar.setValue(mergeTime, "MergeSort", "");
             bar.setValue(heapTime, "HeapSort", "");
             bar.setValue(bubbleTime, "BubbleSort", "");
