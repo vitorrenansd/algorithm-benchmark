@@ -18,4 +18,16 @@ public class MergeSortTest {
 
         assertEquals(expected, sortingResult, "List should be sorted in ascending order");
     }
+    
+    @Test
+    void emptyList() {
+        MergeSort mergeSort = new MergeSort();
+        List<Long> values = new ArrayList<>();
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            mergeSort.sort(values);
+        });
+
+        assertEquals("Original list can't be empty", exception.getMessage());
+    }
 }
