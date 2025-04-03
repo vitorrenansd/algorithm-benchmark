@@ -1,14 +1,17 @@
 package benchmark.algorithms;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import benchmark.application.SortingAlgorithm;
 
-import java.util.ArrayList;
 public class MergeSort implements SortingAlgorithm {
 
     @Override
     public List<Long> sort(List<Long> array) {
+        if (array.size() == 0) {
+            throw new IllegalArgumentException("Original list can't be empty");
+        }
         // Create a copy of the original array
         List<Long> arr = new ArrayList<>(array);
         
