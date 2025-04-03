@@ -1,10 +1,10 @@
 package benchmark.algorithms;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import benchmark.application.SortingAlgorithm;
 
-import java.util.ArrayList;
 public class MergeSort implements SortingAlgorithm {
 
     @Override
