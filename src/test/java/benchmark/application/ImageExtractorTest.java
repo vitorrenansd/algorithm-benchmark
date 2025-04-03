@@ -1,11 +1,11 @@
+package benchmark.application;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.IOException;
-
-import benchmark.application.ImageExtractor;
 
 public class ImageExtractorTest {
 
