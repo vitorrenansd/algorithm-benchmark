@@ -14,7 +14,7 @@ public class Main {
         MergeSort ms = new MergeSort();
 
         // Necessary settings
-        ie.setImagesPath("C:\\Users\\x\\Documents\\GitHubProjects\\algorithm-benchmark\\src\\test\\java");
+        ie.setImagesPath("C:\\Users\\x\\Documents\\GitHubProjects\\algorithm-benchmark\\images");
         ts.setQuantity(200);
 
         // Tests

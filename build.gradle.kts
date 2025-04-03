@@ -11,7 +11,8 @@ repositories {
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+
     implementation("org.jfree:jfreechart:1.5.5")
 }
 
