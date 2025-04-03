@@ -28,7 +28,7 @@ public class ImageExtractor {
         File[] files = directory.listFiles(File::isFile);
         List<Long> lastModifiedList = new ArrayList<>();
     
-        if (files != null) {
+        if (files != null && files.length != 0) {
             for (File file : files) {
                 lastModifiedList.add(file.lastModified());
             }
