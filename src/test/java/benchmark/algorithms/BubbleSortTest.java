@@ -18,4 +18,16 @@ public class BubbleSortTest {
 
         assertEquals(expected, sortingResult, "List should be sorted in ascending order");
     }
+
+    @Test
+    void emptyList() {
+        BubbleSort bubbleSort = new BubbleSort();
+        List<Long> values = new ArrayList<>();
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            bubbleSort.sort(values);
+        });
+
+        assertEquals("Original list can't be empty", exception.getMessage());
+    }
 }
