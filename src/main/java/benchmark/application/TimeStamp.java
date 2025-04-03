@@ -1,4 +1,4 @@
-package benchmark;
+package benchmark.application;
 
 import java.util.List;
 
