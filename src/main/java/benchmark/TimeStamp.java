@@ -3,7 +3,7 @@ package benchmark;
 import java.util.List;
 
 public class TimeStamp {
-    public Integer quantity;
+    private Integer quantity;
 
     
     public void setQuantity(Integer quantity) {
@@ -24,9 +24,7 @@ public class TimeStamp {
         // Stop benchmark
         Long endTime = System.nanoTime();
 
-        // Do the math
         Long executionTime = (endTime - startTime);
-
         return executionTime;
     }
 }
