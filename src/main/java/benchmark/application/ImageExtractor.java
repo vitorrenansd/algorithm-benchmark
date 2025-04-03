@@ -1,14 +1,23 @@
-package benchmark;
+package benchmark.application;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ImageExtractor {
+    private String imagesPath;
+
+
+    public void setImagesPath(String imagesPath) {
+        this.imagesPath = imagesPath;
+    }
+    public String getImagesPath() {
+        return imagesPath;
+    }
 
     // Method to get the last modified timestamps of files
-    public List<Long> pullAllLastModified(String directoryName) {
-        File directory = new File(directoryName);
+    public List<Long> pullAllLastModified() {
+        File directory = new File(this.imagesPath);
     
         // Check if the directory exists and is valid
         if (!directory.exists() || !directory.isDirectory()) {
@@ -30,8 +39,8 @@ public class ImageExtractor {
     }
     
     // Method to get the size in bytes of files
-    public List<Long> pullAllSize(String directoryName) {
-        File directory = new File(directoryName);
+    public List<Long> pullAllSize() {
+        File directory = new File(this.imagesPath);
     
         // Check if the directory exists and is valid
         if (!directory.exists() || !directory.isDirectory()) {
