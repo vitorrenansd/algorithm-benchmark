@@ -18,4 +18,16 @@ public class HeapSortTest {
 
         assertEquals(expected, sortingResult, "List should be sorted in ascending order");
     }
+
+    @Test
+    void emptyList() {
+        HeapSort heapSort = new HeapSort();
+        List<Long> values = new ArrayList<>();
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            heapSort.sort(values);
+        });
+
+        assertEquals("Original list can't be empty", exception.getMessage());
+    }
 }
