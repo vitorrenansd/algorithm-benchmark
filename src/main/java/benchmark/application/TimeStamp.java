@@ -3,7 +3,7 @@ package benchmark.application;
 import java.util.List;
 
 public class TimeStamp {
-    private Integer quantity;
+    private Integer quantity = 1;
 
     
     public void setQuantity(Integer quantity) {
