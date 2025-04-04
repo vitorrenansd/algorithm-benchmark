@@ -3,12 +3,16 @@ package benchmark.application;
 import java.util.List;
 
 public class TimeStamp {
-    private Integer quantity;
+    private Integer quantity = 1;
 
     
     public void setQuantity(Integer quantity) {
+        if (quantity <= 0) {
+            throw new IllegalArgumentException("Quantity must be greater than zero");
+        }
         this.quantity = quantity;
     }
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -18,6 +22,7 @@ public class TimeStamp {
 
         // Start benchmark
         Long startTime = System.nanoTime();
+        
         for (int i = 0; i < this.getQuantity(); i++) {
             algorithm.sort(values);
         }
