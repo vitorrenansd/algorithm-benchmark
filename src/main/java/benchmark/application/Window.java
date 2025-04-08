@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 public class Window extends JFrame {
     
     public Window() {
-        String[] algorithms = {"File datetime", "File size (bytes)", "Both"};
+        String[] algorithms = {"File datetime", "File size (bytes)", "The two's"};
         JLabel chooseAlgorithmLabel = new JLabel("Choose an data:");
         JComboBox<String> chooseAlgorithm = new JComboBox<>(algorithms);
 
