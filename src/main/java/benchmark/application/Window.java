@@ -9,7 +9,7 @@ public class Window extends JFrame {
     
     public Window() {
         String[] algorithms = {"File datetime", "File size (bytes)", "The two's"};
-        JLabel chooseAlgorithmLabel = new JLabel("Choose an data:");
+        JLabel chooseAlgorithmLabel = new JLabel("Choose datatype:");
         JComboBox<String> chooseAlgorithm = new JComboBox<>(algorithms);
 
         chooseAlgorithmLabel.setBounds(10, 10, 150, 15);
@@ -22,8 +22,8 @@ public class Window extends JFrame {
         JLabel folderPathLabel = new JLabel("Images path:");
         JTextField folderPath = new JTextField();
 
-        folderPathLabel.setBounds(200, 10, 100, 15);
-        folderPath.setBounds(200, 30, 450, 25);
+        folderPathLabel.setBounds(180, 10, 100, 15);
+        folderPath.setBounds(180, 30, 470, 25);
         add(folderPathLabel);
         add(folderPath);
 
