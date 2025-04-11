@@ -1,4 +1,4 @@
-package benchmark.application;
+package benchmark.sysinterface;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
