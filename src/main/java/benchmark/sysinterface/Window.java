@@ -4,14 +4,15 @@ import javax.swing.*;
 
 public class Window extends JFrame {
     public Window() {
-        // Initial window config
+        // Window config
         setTitle("Algorithm Benchmark");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600); // Resolution 800x600
         setLocationRelativeTo(null); // Center
-        setResizable(false);
+        setResizable(false); // User can't change window size
 
         // Creating components
+        // First collumn (config)
         String[] algorithms = {"File datetime", "File size (bytes)", "The two's"};
         JLabel chooseAlgorithmLabel = new JLabel("Choose datatype:");
         JComboBox<String> chooseAlgorithm = new JComboBox<>(algorithms);
@@ -21,6 +22,13 @@ public class Window extends JFrame {
 
         JLabel quantityLabel = new JLabel("Tests quantity:");
         JTextField quantity = new JTextField();
+
+        // Second column (big window benchmark)
+
+
+
+        // Third collumn (especific algorithm buttons)
+
 
 
         setVisible(true);
