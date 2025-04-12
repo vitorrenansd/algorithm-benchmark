@@ -45,13 +45,13 @@ public class Window extends JFrame {
             layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(chooseAlgorithmLabel)
-                    .addComponent(chooseAlgorithm, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(chooseAlgorithm))
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(folderPathLabel)
-                    .addComponent(folderPath, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(folderPath))
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(quantityLabel)
-                    .addComponent(quantity, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(quantity))
         );
 
         layout.setVerticalGroup(
