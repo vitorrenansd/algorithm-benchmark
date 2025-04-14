@@ -1,11 +1,13 @@
 package benchmark;
 
 import benchmark.algorithms.*;
-import benchmark.application.ImageExtractor;
-import benchmark.application.TimeStamp;
+import benchmark.application.*;
+import benchmark.sysinterface.*;
 
 public class Main {
     public static void main(String[] args) {
+        new Window();
+
         // Application instances
         ImageExtractor ie = new ImageExtractor();
         TimeStamp ts = new TimeStamp();
@@ -17,7 +19,7 @@ public class Main {
 
         // Necessary settings
         ie.setImagesPath("C:\\Users\\x\\Documents\\GitHubProjects\\algorithm-benchmark\\images");
-        ts.setQuantity(200);
+        ts.setQuantity(20);
 
         // Tests
         Long bsAvg = ts.benchSorting(ie.pullAllLastModified(), bs) / ts.getQuantity();
