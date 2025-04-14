@@ -1,11 +1,27 @@
 package benchmark.algorithms;
 
 import java.util.List;
-
+import java.util.ArrayList;
 import benchmark.application.SortingAlgorithm;
 
-import java.util.ArrayList;
-
+/**
+ * The HeapSort class implements the SortingAlgorithm interface 
+ * and provides an implementation of the heap sort algorithm for sorting a list of Long values.
+ * 
+ * Heap Sort is a comparison-based sorting algorithm that works by building a max-heap from the input data.
+ * The largest element is then extracted from the heap and placed at the end of the sorted portion of the array.
+ * This process is repeated for the remaining elements, resulting in a sorted array.
+ * 
+ * <p>Example usage:</p>
+ * <pre>
+ *     SortingAlgorithm heapSort = new HeapSort();
+ *     List<Long> sortedValues = heapSort.sort(values);
+ * </pre>
+ * 
+ * @author vitorrenansd
+ * @version 0.7.2-beta
+ * @since 2025-04-14
+ */
 public class HeapSort implements SortingAlgorithm {
     @Override
     public List<Long> sort(List<Long> array) {

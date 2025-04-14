@@ -2,9 +2,25 @@ package benchmark.algorithms;
 
 import java.util.List;
 import java.util.ArrayList;
-
 import benchmark.application.SortingAlgorithm;
 
+/**
+ * The MergeSort class implements the SortingAlgorithm interface 
+ * and provides an implementation of the merge sort algorithm for sorting a list of Long values.
+ * 
+ * Merge Sort is a divide-and-conquer algorithm that recursively divides the array into two halves, 
+ * sorts each half, and then merges the sorted halves to produce the final sorted array.
+ * 
+ * <p>Example usage:</p>
+ * <pre>
+ *     SortingAlgorithm mergeSort = new MergeSort();
+ *     List<Long> sortedValues = mergeSort.sort(values);
+ * </pre>
+ * 
+ * @author vitorrenansd
+ * @version 0.7.2-beta
+ * @since 2025-04-14
+ */
 public class MergeSort implements SortingAlgorithm {
 
     @Override

@@ -2,6 +2,23 @@ package benchmark.application;
 
 import java.util.List;
 
+/**
+ * The TimeStamp class is responsible for performing benchmarking of sorting algorithms.
+ * It allows setting the number of iterations for sorting the list of Long values
+ * and calculates the total time taken for the execution.
+ * 
+ * <p>Example usage:</p>
+ * <pre>
+ *     TimeStamp benchmark = new TimeStamp();
+ *     benchmark.setQuantity(5);
+ *     Long executionTime = benchmark.benchSorting(values, new BubbleSort());
+ *     System.out.println("Execution time: " + executionTime);
+ * </pre>
+ * 
+ * @author vitorrenansd
+ * @version 0.7.2-beta
+ * @since 2025-04-14
+ */
 public class TimeStamp {
     private Integer quantity = 1;
 

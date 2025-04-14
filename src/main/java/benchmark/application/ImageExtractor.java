@@ -4,6 +4,26 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The ImageExtractor class is responsible for extracting file metadata
+ * (such as last modified timestamp and file size) from a given directory 
+ * that contains image files. The class provides methods to retrieve 
+ * information about the files present in the specified directory.
+ * 
+ * <p>
+ * Example usage:
+ * <pre>
+ *     ImageExtractor ex = new ImageExtractor();
+ *     ex.setImagesPath("path/to/images");
+ *     List<Long> lastModified = extractor.pullAllLastModified();
+ *     List<Long> fileSizes = extractor.pullAllSize();
+ * </pre>
+ * </p>
+ * 
+ * @author vitorrenansd
+ * @version 0.7.2-beta
+ * @since 2025-04-14
+ */
 public class ImageExtractor {
     private String imagesPath;
 
