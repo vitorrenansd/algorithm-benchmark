@@ -13,7 +13,6 @@ public class Window extends JFrame {
         setResizable(false); // User can't change window size
 
         // Creating components
-        // First collumn (config)
         String[] algorithms = {"Datetime", "Size (bytes)", "The two's"};
         JLabel chooseAlgorithmLabel = new JLabel("Choose datatype:");
         JComboBox<String> chooseAlgorithm = new JComboBox<>(algorithms);
@@ -27,20 +26,17 @@ public class Window extends JFrame {
         JTextField quantity = new JTextField();
         quantity.setPreferredSize(new Dimension(100, 25));
 
-        // Second column (big window benchmark)
+        JButton bubbleBenchButton = new JButton("Bubble Sort");
+        JButton heapBenchButton = new JButton("Heap Sort");
+        JButton mergeBenchButton = new JButton("Merge Sort");
 
-        // Third collumn (especific algorithm buttons)
-
-
-        // Creating layout
-        JPanel panel = new JPanel();
-        GroupLayout layout = new GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-
+        // Painel do topo com GroupLayout
+        JPanel topPanel = new JPanel();
+        GroupLayout layout = new GroupLayout(topPanel);
+        topPanel.setLayout(layout);
         layout.setAutoCreateGaps(true);
         layout.setAutoCreateContainerGaps(true);
 
-        // Setting layout to application
         layout.setHorizontalGroup(
             layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -66,7 +62,17 @@ public class Window extends JFrame {
                     .addComponent(quantity))
         );
 
-        add(panel);
+        // Painel inferior com os botões centralizados
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        buttonPanel.add(mergeBenchButton);
+        buttonPanel.add(bubbleBenchButton);
+        buttonPanel.add(heapBenchButton);
+
+        // Painel principal com BorderLayout
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(topPanel, BorderLayout.NORTH);
+        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+
         setVisible(true);
     }
 }
