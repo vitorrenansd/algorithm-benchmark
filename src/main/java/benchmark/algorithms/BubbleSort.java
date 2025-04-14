@@ -1,11 +1,27 @@
 package benchmark.algorithms;
 
 import java.util.List;
-
+import java.util.ArrayList;
 import benchmark.application.SortingAlgorithm;
 
-import java.util.ArrayList;
-
+/**
+ * The BubbleSort class implements the SortingAlgorithm interface 
+ * and provides an implementation of the bubble sort algorithm for sorting a list of Long values.
+ * 
+ * Bubble Sort is a simple comparison-based sorting algorithm. It repeatedly steps through the list,
+ * compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated 
+ * until the list is sorted.
+ * 
+ * <p>Example usage:</p>
+ * <pre>
+ *     SortingAlgorithm bubbleSort = new BubbleSort();
+ *     List<Long> sortedValues = bubbleSort.sort(values);
+ * </pre>
+ * 
+ * @author vitorrenansd
+ * @version 0.7.2-beta
+ * @since 2025-04-14
+ */
 public class BubbleSort implements SortingAlgorithm {
     @Override
     public List<Long> sort(List<Long> array) {
