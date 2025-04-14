@@ -10,12 +10,13 @@ public class Window extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(960, 640); // Resolution
         setLocationRelativeTo(null); // Center
-        setResizable(false); // User can't change window size
+        setResizable(false);
 
         ConfigPanel configPanel = new ConfigPanel();
-        ButtonPanel buttonPanel = new ButtonPanel();
         BenchmarkPanel benchmarkPanel = new BenchmarkPanel(); // PLACEHOLDER
+        ButtonPanel buttonPanel = new ButtonPanel();
 
+        // Add to frame
         setLayout(new BorderLayout());
         add(configPanel, BorderLayout.NORTH);
         add(benchmarkPanel, BorderLayout.CENTER);
