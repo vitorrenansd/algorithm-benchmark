@@ -1,7 +1,12 @@
 package benchmark.application;
 
 import org.junit.jupiter.api.Test;
+
+import benchmark.algorithms.BubbleSort;
+
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
 
 public class TimeStampTest {
 
@@ -47,5 +52,20 @@ public class TimeStampTest {
         });
 
         assertEquals("Quantity must be greater than zero", exception.getMessage());
+    }
+
+    @Test
+    void validBenchSort() {
+        TimeStamp timeStamp = new TimeStamp();
+        timeStamp.setQuantity(5);
+
+        SortingAlgorithm bubbleSort = new BubbleSort();
+        List<Long> values = List.of(5L, 3L, 1L, 4L, 2L);
+
+        assertDoesNotThrow(() -> {
+            Long timeTaken = timeStamp.benchSorting(values, bubbleSort);
+            assertNotNull(timeTaken);
+            assertTrue(timeTaken > 0, "Execution time should be positive");
+        });
     }
 }
