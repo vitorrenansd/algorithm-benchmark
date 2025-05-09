@@ -20,6 +20,17 @@ public class MergeSortTest {
     }
     
     @Test
+    void validSortNegative() {
+        MergeSort mergeSort = new MergeSort();
+        List<Long> values = new ArrayList<>(List.of(-2L, -5L, 0L, 3L));
+        List<Long> expected = new ArrayList<>(List.of(-5L, -2L, 0L, 3L));
+
+        List<Long> sortingResult = mergeSort.sort(values);
+
+        assertEquals(expected, sortingResult, "List with negative values should be sorted correctly");
+    }
+
+    @Test
     void emptyList() {
         MergeSort mergeSort = new MergeSort();
         List<Long> values = new ArrayList<>();

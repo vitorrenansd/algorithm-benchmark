@@ -20,6 +20,17 @@ public class BubbleSortTest {
     }
 
     @Test
+    void validSortNegative() {
+        BubbleSort bubbleSort = new BubbleSort();
+        List<Long> values = new ArrayList<>(List.of(-2L, -5L, 0L, 3L));
+        List<Long> expected = new ArrayList<>(List.of(-5L, -2L, 0L, 3L));
+
+        List<Long> sortingResult = bubbleSort.sort(values);
+
+        assertEquals(expected, sortingResult, "List with negative values should be sorted correctly");
+    }
+
+    @Test
     void emptyList() {
         BubbleSort bubbleSort = new BubbleSort();
         List<Long> values = new ArrayList<>();

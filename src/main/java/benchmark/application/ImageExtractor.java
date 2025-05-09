@@ -71,7 +71,7 @@ public class ImageExtractor {
         File[] files = directory.listFiles(File::isFile);
         List<Long> fileSizeList = new ArrayList<>();
     
-        if (files != null) {
+        if (files != null && files.length != 0) {
             for (File file : files) {
                 fileSizeList.add(file.length()); // Returns file size in bytes
             }

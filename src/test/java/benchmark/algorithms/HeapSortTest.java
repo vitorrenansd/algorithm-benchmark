@@ -20,6 +20,17 @@ public class HeapSortTest {
     }
 
     @Test
+    void validSortNegative() {
+        HeapSort heapSort = new HeapSort();
+        List<Long> values = new ArrayList<>(List.of(-2L, -5L, 0L, 3L));
+        List<Long> expected = new ArrayList<>(List.of(-5L, -2L, 0L, 3L));
+
+        List<Long> sortingResult = heapSort.sort(values);
+
+        assertEquals(expected, sortingResult, "List with negative values should be sorted correctly");
+    }
+
+    @Test
     void emptyList() {
         HeapSort heapSort = new HeapSort();
         List<Long> values = new ArrayList<>();
