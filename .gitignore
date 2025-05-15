@@ -1,7 +1,8 @@
-## Gradle unnecessary
+## Gradle
 /.gradle
 /build
 /bin
+.settings
 
 ## IDE
 /.idea
