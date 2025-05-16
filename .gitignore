@@ -11,3 +11,6 @@
 ## Local files
 .env
 /images
+
+## VSCode personal workspace file
+*.code-workspace
