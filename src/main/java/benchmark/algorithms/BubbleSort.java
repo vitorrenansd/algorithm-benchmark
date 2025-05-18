@@ -2,7 +2,7 @@ package benchmark.algorithms;
 
 import java.util.List;
 import java.util.ArrayList;
-import benchmark.application.SortingAlgorithm;
+import benchmark.core.SortingAlgorithm;
 
 /**
  * The BubbleSort class implements the SortingAlgorithm interface 

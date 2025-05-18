@@ -1,4 +1,4 @@
-package benchmark.application;
+package benchmark.core;
 
 import java.io.File;
 import java.util.ArrayList;

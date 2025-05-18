@@ -1,4 +1,4 @@
-package benchmark.application;
+package benchmark.sysinterface.visual;
 
 import javax.swing.JFrame;
 

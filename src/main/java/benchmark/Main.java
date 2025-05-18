@@ -1,8 +1,8 @@
 package benchmark;
 
 import benchmark.algorithms.*;
-import benchmark.application.*;
-import benchmark.sysinterface.*;
+import benchmark.core.*;
+import benchmark.sysinterface.visual.Window;
 
 public class Main {
     public static void main(String[] args) {

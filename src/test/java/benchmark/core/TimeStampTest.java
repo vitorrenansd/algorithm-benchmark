@@ -1,11 +1,9 @@
-package benchmark.application;
+package benchmark.core;
 
 import org.junit.jupiter.api.Test;
-
-import benchmark.algorithms.BubbleSort;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+import benchmark.algorithms.BubbleSort;
 import java.util.List;
 
 public class TimeStampTest {

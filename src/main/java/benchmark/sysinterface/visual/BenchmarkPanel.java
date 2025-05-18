@@ -1,10 +1,10 @@
 // PLACEHOLDER
 
-package benchmark.sysinterface;
+package benchmark.sysinterface.visual;
 
 import javax.swing.*;
+
 import java.awt.*;
-import benchmark.application.ResultChart;
 
 public class BenchmarkPanel extends JPanel {
     public BenchmarkPanel() {

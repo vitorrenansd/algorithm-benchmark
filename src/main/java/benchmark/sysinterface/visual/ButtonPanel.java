@@ -1,4 +1,4 @@
-package benchmark.sysinterface;
+package benchmark.sysinterface.visual;
 
 import javax.swing.*;
 import java.awt.*;
