@@ -1,7 +1,12 @@
 package benchmark.sysinterface.actions;
 
 import javax.swing.*;
+
+import org.jfree.chart.JFreeChart;
+
 import java.awt.*;
+import java.util.List;
+import java.util.Map;
 
 import benchmark.core.*;
 import benchmark.sysinterface.visual.*;
@@ -16,7 +21,7 @@ public class Window extends JFrame {
         setResizable(false);
 
         ConfigPanel configPanel = new ConfigPanel();
-        BenchmarkPanel benchmarkPanel = new BenchmarkPanel(); // PLACEHOLDER
+        BenchmarkPanel benchmarkPanel = new BenchmarkPanel();
         ButtonPanel buttonPanel = new ButtonPanel();
 
         // Add to frame
@@ -25,12 +30,11 @@ public class Window extends JFrame {
         add(benchmarkPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
 
-
         ImageExtractor imgExtractor = new ImageExtractor();
         TimeStamp timeStp = new TimeStamp();
 
         // Action when RUN is pressed
-        buttonPanel.benchmarkButton.addActionListener(e -> {
+        buttonPanel.benchmarkButton.addActionListener(_ -> {
             try {
                 String path = configPanel.folderPath.getText();
                 String quantityText = configPanel.quantity.getText();
@@ -43,18 +47,30 @@ public class Window extends JFrame {
                 }
 
                 int quantity = Integer.parseInt(quantityText);
-
                 imgExtractor.setImagesPath(path);
                 timeStp.setQuantity(quantity);
 
-                if (criteria == "Datetime") {
-                    long bubbleTime;
-                    long HeapTime;
-                    long MergeTime;
-                }
-                if (criteria == "Size (bytes)") {
+                List<Long> values;
 
+                if ("Datetime".equals(criteria)) {
+                    values = imgExtractor.pullAllLastModified();
+                } else if ("Size (bytes)".equals(criteria)) {
+                    values = imgExtractor.pullAllSize();
+                } else {
+                    JOptionPane.showMessageDialog(this,"Unknown criteria selected","ERROR", JOptionPane.ERROR_MESSAGE);
+                    return;
                 }
+
+                Map<String, Long> results = timeStp.benchmarkAll(values);
+
+                ResultChart chartBuilder = new ResultChart();
+                JFreeChart chart = chartBuilder.buildBarGraph(
+                    results.get("MergeSort"),
+                    results.get("HeapSort"),
+                    results.get("BubbleSort")
+                );
+
+                benchmarkPanel.showChart(chart);
 
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
