@@ -13,7 +13,7 @@ public class ConfigPanel extends JPanel {
         setLayout(new FlowLayout(FlowLayout.CENTER)); // Centralized
 
         // Algorithms combobox
-        String[] algorithms = {"Datetime", "Size (bytes)", "The two's"};
+        String[] algorithms = {"Datetime", "Size (bytes)"};
         add(new JLabel("Datatype:"));
         chooseAlgorithm = new JComboBox<>(algorithms);
         chooseAlgorithm.setPreferredSize(new Dimension(150, 25));
