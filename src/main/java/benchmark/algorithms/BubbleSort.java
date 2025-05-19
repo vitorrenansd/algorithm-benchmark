@@ -33,6 +33,7 @@ public class BubbleSort implements SortingAlgorithm {
         
         // Iterate through the array (n - 1) times
         for (int i = 0; i < arr.size() - 1; i++) {
+            boolean swapped = false;
             // Traverse the array up to the last unsorted position
             for (int j = 0; j < arr.size() - 1 - i; j++) {
                 // Swap values if the current one is greater than the next
@@ -40,8 +41,10 @@ public class BubbleSort implements SortingAlgorithm {
                     long temp = arr.get(j);
                     arr.set(j, arr.get(j + 1));
                     arr.set(j + 1, temp);
+                    swapped = true;
                 }
             }
+            if (!swapped) break;
         }
         return arr;
     }
