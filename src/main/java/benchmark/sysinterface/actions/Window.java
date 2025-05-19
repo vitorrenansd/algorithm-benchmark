@@ -33,23 +33,31 @@ public class Window extends JFrame {
         buttonPanel.benchmarkButton.addActionListener(e -> {
             try {
                 String path = configPanel.folderPath.getText();
-                int quantity = Integer.parseInt(configPanel.quantity.getText());
+                String quantityText = configPanel.quantity.getText();
                 String criteria = (String) configPanel.chooseAlgorithm.getSelectedItem();
+
+                // If user dont set quantity
+                if (quantityText == null || quantityText.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Error: Please set a quantity of tests", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                int quantity = Integer.parseInt(quantityText);
 
                 imgExtractor.setImagesPath(path);
                 timeStp.setQuantity(quantity);
 
-                System.out.println(imgExtractor.getImagesPath());
-                System.out.println(timeStp.getQuantity());
-
                 if (criteria == "Datetime") {
-                    long bubbleTime = 
-                    timeStp.benchSorting(imgExtractor.pullAllLastModified(), null);
+                    long bubbleTime;
+                    long HeapTime;
+                    long MergeTime;
+                }
+                if (criteria == "Size (bytes)") {
+
                 }
 
             } catch (Exception ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Error trying to run benchmark: " + ex.getMessage());
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         });
 
