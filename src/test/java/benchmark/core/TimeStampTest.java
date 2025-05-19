@@ -1,11 +1,9 @@
-package benchmark.application;
+package benchmark.core;
 
 import org.junit.jupiter.api.Test;
-
-import benchmark.algorithms.BubbleSort;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+import benchmark.algorithms.BubbleSort;
 import java.util.List;
 
 public class TimeStampTest {
@@ -63,7 +61,7 @@ public class TimeStampTest {
         List<Long> values = List.of(5L, 3L, 1L, 4L, 2L);
 
         assertDoesNotThrow(() -> {
-            Long timeTaken = timeStamp.benchSorting(values, bubbleSort);
+            Long timeTaken = timeStamp.benchmark(values, bubbleSort);
             assertNotNull(timeTaken);
             assertTrue(timeTaken > 0, "Execution time should be positive");
         });

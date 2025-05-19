@@ -1,4 +1,4 @@
-package benchmark.application;
+package benchmark.core;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class ImageExtractor {
     
         // Check if the directory exists and is valid
         if (!directory.exists() || !directory.isDirectory()) {
-            throw new IllegalArgumentException("Error: The directory doesn't exist or is not valid.");
+            throw new IllegalArgumentException("Error: The directory does not exist or is not valid.");
         }
     
         // Get all files in the directory

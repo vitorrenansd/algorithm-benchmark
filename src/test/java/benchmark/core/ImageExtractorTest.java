@@ -1,4 +1,4 @@
-package benchmark.application;
+package benchmark.core;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,7 +30,7 @@ public class ImageExtractorTest {
             ie.pullAllLastModified();
         });
 
-        assertEquals("Error: The directory doesn't exist or is not valid.", exception.getMessage());
+        assertEquals("Error: The directory does not exist or is not valid.", exception.getMessage());
     }
 
     @Test

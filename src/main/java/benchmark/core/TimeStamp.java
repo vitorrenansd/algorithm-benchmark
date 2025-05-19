@@ -1,6 +1,13 @@
-package benchmark.application;
+package benchmark.core;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import benchmark.algorithms.BubbleSort;
+import benchmark.algorithms.HeapSort;
+import benchmark.algorithms.MergeSort;
 
 /**
  * The TimeStamp class is responsible for performing benchmarking of sorting algorithms.
@@ -24,7 +31,7 @@ public class TimeStamp {
 
     
     public void setQuantity(Integer quantity) {
-        if (quantity <= 0) {
+        if (quantity <= 0 || quantity == null) {
             throw new IllegalArgumentException("Quantity must be greater than zero");
         }
         this.quantity = quantity;
@@ -35,18 +42,29 @@ public class TimeStamp {
     }
 
     // Benchmark, iterate N times and print the avg time
-    public Long benchSorting(List<Long> values, SortingAlgorithm algorithm) {
+    public Long benchmark(List<Long> values, SortingAlgorithm algorithm) {
+
+        // JVM warm-up
+        algorithm.sort(values);
 
         // Start benchmark
         Long startTime = System.nanoTime();
-        
         for (int i = 0; i < this.getQuantity(); i++) {
             algorithm.sort(values);
         }
-        // Stop benchmark
         Long endTime = System.nanoTime();
 
         Long executionTime = (endTime - startTime);
-        return executionTime;
+        return executionTime / 1_000_000;
+    }
+
+    public Map<String, Long> benchmarkAll(List<Long> values) {
+        Map<String, Long> results = new LinkedHashMap<>();
+
+        results.put("BubbleSort", benchmark(new ArrayList<>(values), new BubbleSort()));
+        results.put("HeapSort", benchmark(new ArrayList<>(values), new HeapSort()));
+        results.put("MergeSort", benchmark(new ArrayList<>(values), new MergeSort()));
+
+        return results;
     }
 }
