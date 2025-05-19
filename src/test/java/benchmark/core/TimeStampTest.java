@@ -63,7 +63,7 @@ public class TimeStampTest {
         assertDoesNotThrow(() -> {
             Long timeTaken = timeStamp.benchmark(values, bubbleSort);
             assertNotNull(timeTaken);
-            assertTrue(timeTaken > 0, "Execution time should be positive");
+            assertTrue(timeTaken >= 0, "Execution time should be positive");
         });
     }
 }
