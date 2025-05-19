@@ -1,9 +1,7 @@
 package benchmark.sysinterface.actions;
 
 import javax.swing.*;
-
 import org.jfree.chart.JFreeChart;
-
 import java.awt.*;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +30,7 @@ public class Window extends JFrame {
 
         ImageExtractor imgExtractor = new ImageExtractor();
         TimeStamp timeStp = new TimeStamp();
+        ResultChart chartBuilder = new ResultChart();
 
         // Action when RUN is pressed
         buttonPanel.benchmarkButton.addActionListener(_ -> {
@@ -42,16 +41,17 @@ public class Window extends JFrame {
 
                 // If user dont set quantity
                 if (quantityText == null || quantityText.trim().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Error: Please set a quantity of tests", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Please set a quantity of tests", "ERROR", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
 
+                // User config
                 int quantity = Integer.parseInt(quantityText);
                 imgExtractor.setImagesPath(path);
                 timeStp.setQuantity(quantity);
 
+                // List the archives from folder
                 List<Long> values;
-
                 if ("Datetime".equals(criteria)) {
                     values = imgExtractor.pullAllLastModified();
                 } else if ("Size (bytes)".equals(criteria)) {
@@ -61,22 +61,23 @@ public class Window extends JFrame {
                     return;
                 }
 
+                // Benchmark them
                 Map<String, Long> results = timeStp.benchmarkAll(values);
 
-                ResultChart chartBuilder = new ResultChart();
+                // Builds using ResultChart class
                 JFreeChart chart = chartBuilder.buildBarGraph(
                     results.get("MergeSort"),
                     results.get("HeapSort"),
                     results.get("BubbleSort")
                 );
 
+                // Show chart
                 benchmarkPanel.showChart(chart);
 
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         });
-
         setVisible(true);
     }
 }
