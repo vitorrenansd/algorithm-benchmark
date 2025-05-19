@@ -1,6 +1,13 @@
 package benchmark.core;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import benchmark.algorithms.BubbleSort;
+import benchmark.algorithms.HeapSort;
+import benchmark.algorithms.MergeSort;
 
 /**
  * The TimeStamp class is responsible for performing benchmarking of sorting algorithms.
@@ -35,7 +42,7 @@ public class TimeStamp {
     }
 
     // Benchmark, iterate N times and print the avg time
-    public Long benchSorting(List<Long> values, SortingAlgorithm algorithm) {
+    public Long benchmark(List<Long> values, SortingAlgorithm algorithm) {
 
         // Start benchmark
         Long startTime = System.nanoTime();
@@ -48,5 +55,15 @@ public class TimeStamp {
 
         Long executionTime = (endTime - startTime);
         return executionTime;
+    }
+
+    public Map<String, Long> benchmarkAll(List<Long> values) {
+        Map<String, Long> results = new LinkedHashMap<>();
+
+        results.put("BubbleSort", benchmark(new ArrayList<>(values), new BubbleSort()));
+        results.put("HeapSort", benchmark(new ArrayList<>(values), new HeapSort()));
+        results.put("MergeSort", benchmark(new ArrayList<>(values), new MergeSort()));
+
+        return results;
     }
 }
