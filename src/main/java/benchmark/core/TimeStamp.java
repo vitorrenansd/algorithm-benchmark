@@ -45,9 +45,7 @@ public class TimeStamp {
     public Long benchmark(List<Long> values, SortingAlgorithm algorithm) {
 
         // JVM warm-up
-        for (int i = 0; i < 5; i++) {
-            algorithm.sort(values);
-        }
+        algorithm.sort(values);
 
         // Start benchmark
         Long startTime = System.nanoTime();
@@ -57,7 +55,7 @@ public class TimeStamp {
         Long endTime = System.nanoTime();
 
         Long executionTime = (endTime - startTime);
-        return executionTime;
+        return executionTime / 1_000_000;
     }
 
     public Map<String, Long> benchmarkAll(List<Long> values) {
