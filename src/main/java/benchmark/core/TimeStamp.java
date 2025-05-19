@@ -24,7 +24,7 @@ public class TimeStamp {
 
     
     public void setQuantity(Integer quantity) {
-        if (quantity <= 0) {
+        if (quantity <= 0 || quantity == null) {
             throw new IllegalArgumentException("Quantity must be greater than zero");
         }
         this.quantity = quantity;
