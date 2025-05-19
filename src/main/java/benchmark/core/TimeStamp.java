@@ -44,13 +44,16 @@ public class TimeStamp {
     // Benchmark, iterate N times and print the avg time
     public Long benchmark(List<Long> values, SortingAlgorithm algorithm) {
 
+        // JVM warm-up
+        for (int i = 0; i < 10; i++) {
+            algorithm.sort(values);
+        }
+
         // Start benchmark
         Long startTime = System.nanoTime();
-        
         for (int i = 0; i < this.getQuantity(); i++) {
             algorithm.sort(values);
         }
-        // Stop benchmark
         Long endTime = System.nanoTime();
 
         Long executionTime = (endTime - startTime);
