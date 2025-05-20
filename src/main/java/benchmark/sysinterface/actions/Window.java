@@ -33,7 +33,7 @@ public class Window extends JFrame {
         ResultChart chartBuilder = new ResultChart();
 
         // Action when RUN is pressed
-        buttonPanel.benchmarkButton.addActionListener(_ -> {
+        buttonPanel.benchmarkButton.addActionListener(_unused -> {
             try {
                 String path = configPanel.folderPath.getText();
                 String quantityText = configPanel.quantity.getText();
