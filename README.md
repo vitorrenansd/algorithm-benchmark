@@ -16,7 +16,7 @@ This package contains only the Main.java class, which calls the Window class and
 Responsible for the algorithm classes
 
 - `benchmark.core`
-This package is crucial to the application, containing the essential classes required for its basic functionality, even without a user-friendly visual interface
+This package is the core of the application, containing the essential classes required for its basic functionality, can run without a user-friendly visual interface
 
 - `benchmark.sysinterface.actions`
 - `benchmark.sysinterface.visual`
