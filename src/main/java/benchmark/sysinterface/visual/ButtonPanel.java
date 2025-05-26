@@ -11,7 +11,7 @@ public class ButtonPanel extends JPanel {
     public ButtonPanel() {
         setLayout(new FlowLayout(FlowLayout.CENTER, 30, 10)); // Centralized with gap between
 
-        benchmarkButton = new JButton("Run Benchmark");
+        benchmarkButton = new JButton("START");
 
         loadingLabel = new JLabel("Running benchmark...");
         loadingLabel.setVisible(false);
