@@ -18,6 +18,4 @@ Responsible for the algorithm classes (Bubble Sort, Merge Sort, Heap Sort)
 - `benchmark.core`
 This package is the core of the application, containing the essential classes required for its basic functionality, can run without a user-friendly visual interface
 
-- `benchmark.sysinterface.actions`
-
-- `benchmark.sysinterface.visual`
+- `benchmark.sysinterface`
