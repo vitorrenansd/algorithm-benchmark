@@ -19,3 +19,4 @@ Responsible for the algorithm classes (Bubble Sort, Merge Sort, Heap Sort)
 This package is the core of the application, containing the essential classes required for its basic functionality, can run without a user-friendly visual interface
 
 - `benchmark.sysinterface`
+Handles the graphical user interface (GUI) of the application. It organizes visual components and user interactions, connecting the core logic to the interface for configuring and displaying benchmark results.
