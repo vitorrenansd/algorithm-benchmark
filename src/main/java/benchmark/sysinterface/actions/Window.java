@@ -14,7 +14,7 @@ public class Window extends JFrame {
         // Window config
         setTitle("Algorithm Benchmark");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(960, 640); // Resolution
+        setSize(1024, 640); // Resolution
         setLocationRelativeTo(null); // Center
         setResizable(false);
 
