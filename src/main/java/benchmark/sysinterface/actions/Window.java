@@ -10,11 +10,14 @@ import benchmark.core.*;
 import benchmark.sysinterface.visual.*;
 
 public class Window extends JFrame {
+    private static final int WINDOW_WIDTH = 1024;
+    private static final int WINDOW_HEIGHT = 640;
+
     public Window() {
         // Window config
         setTitle("Algorithm Benchmark");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(1024, 640); // Resolution
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setLocationRelativeTo(null); // Center
         setResizable(false);
 
@@ -33,8 +36,7 @@ public class Window extends JFrame {
         ResultChart chartBuilder = new ResultChart();
 
         // Action when RUN is pressed
-        buttonPanel.benchmarkButton.addActionListener(_unused -> {
-            
+        buttonPanel.benchmarkButton.addActionListener(_ -> {
             buttonPanel.loadingLabel.setVisible(true);
 
             new Thread(() -> {
@@ -77,11 +79,9 @@ public class Window extends JFrame {
 
                     // Show chart
                     SwingUtilities.invokeLater(() -> benchmarkPanel.showChart(chart));
-
                 } catch (Exception ex) {
                     SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(
-                        null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE
-                    ));
+                        null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE));
                 } finally {
                     SwingUtilities.invokeLater(() -> buttonPanel.loadingLabel.setVisible(false)); // Hide "Loading..."
                 }
