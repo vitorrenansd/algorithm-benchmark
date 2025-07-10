@@ -36,7 +36,7 @@ public class Window extends JFrame {
         ResultChart chartBuilder = new ResultChart();
 
         // Action when RUN is pressed
-        buttonPanel.benchmarkButton.addActionListener(_ -> {
+        buttonPanel.benchmarkButton.addActionListener(unused -> {
             buttonPanel.loadingLabel.setVisible(true);
 
             new Thread(() -> {
